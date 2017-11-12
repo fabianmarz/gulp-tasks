@@ -25,7 +25,7 @@ Add gulp to your main project and require the collection in the `gulpfile.js`.
 
 ```js
 const gulp = require('gulp');
-require('./index.js')(gulp);
+require('@fabianmarz/gulp-tasks')(gulp);
 ```
 
 ## TODO
