@@ -12,6 +12,7 @@ module.exports = function (gulp) {
   };
 
   gulp.task('watch', [
-    'serve'
+    'serve',
+    'styles'
   ], task);
 };
