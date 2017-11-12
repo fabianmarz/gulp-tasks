@@ -1,6 +1,6 @@
 {
   "name": "@fabianmarz/gulp-tasks",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "Personal gulp tasks which I use in projects.",
   "main": "index.js",
   "repository": "git@github.com:fabianmarz/gulp-tasks.git",
@@ -11,7 +11,8 @@
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.0",
     "gulp-sass": "^3.1.0",
-    "run-sequence": "^2.2.0"
+    "run-sequence": "^2.2.0",
+    "sass-module-importer": "^1.4.0"
   },
   "paths": {
     "manifest": "./assets/manifest.json",

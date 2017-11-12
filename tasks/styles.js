@@ -5,10 +5,13 @@ module.exports = function (gulp) {
   const csso = require('gulp-csso');
   const paths = require('./../package.json').paths;
   const sass = require('gulp-sass');
+  const sassModuleImporter = require('sass-module-importer');
 
   const task = function () {
     return gulp.src(paths.styles)
-      .pipe(sass().on('error', sass.logError))
+      .pipe(sass({
+        importer: sassModuleImporter(),
+      }).on('error', sass.logError))
       .pipe(csso({
         sourceMap: true,
         debug: true,
