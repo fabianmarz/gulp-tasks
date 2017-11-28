@@ -1,11 +1,12 @@
 module.exports = function (gulp) {
   'use strict';
 
-  const paths = require('./../package.json').paths;
+  const path = require('path');
+  const manifest = require(path.resolve('manifest.json'));
 
   const task = function () {
     gulp.watch([
-      paths.styles
+      manifest.config.paths.styles.assets
     ], [
       'styles'
     ]);

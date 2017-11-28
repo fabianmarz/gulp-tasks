@@ -3,12 +3,13 @@ module.exports = function (gulp) {
 
   const browserSync = require('browser-sync');
   const csso = require('gulp-csso');
-  const paths = require('./../package.json').paths;
+  const path = require('path');
+  const manifest = require(path.resolve('manifest.json'));
   const sass = require('gulp-sass');
   const sassModuleImporter = require('sass-module-importer');
 
   const task = function () {
-    return gulp.src(paths.styles)
+    return gulp.src(manifest.config.paths.styles.assets)
       .pipe(sass({
         importer: sassModuleImporter(),
       }).on('error', sass.logError))
@@ -16,7 +17,7 @@ module.exports = function (gulp) {
         sourceMap: true,
         debug: true,
       }))
-      .pipe(gulp.dest('./dist/css'))
+      .pipe(gulp.dest(manifest.config.paths.styles.dist))
       .pipe(browserSync.stream());
   }
 

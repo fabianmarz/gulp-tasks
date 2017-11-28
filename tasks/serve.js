@@ -3,8 +3,7 @@ module.exports = function (gulp) {
 
   const browserSync = require('browser-sync');
   const path = require('path');
-  const paths = require('./../package.json').paths;
-  const manifest = require(path.resolve(paths.manifest));
+  const manifest = require(path.resolve('manifest.json'));
 
   const task = function () {
     return browserSync.init({
