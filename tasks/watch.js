@@ -6,14 +6,17 @@ module.exports = function (gulp) {
 
   const task = function () {
     gulp.watch([
-      manifest.config.paths.styles.assets
+      manifest.config.paths.styles.assets,
+      manifest.config.paths.scripts.assets,
     ], [
-      'styles'
+      'styles',
+      'scripts',
     ]);
   };
 
   gulp.task('watch', [
     'serve',
-    'styles'
+    'styles',
+    'scripts',
   ], task);
 };
